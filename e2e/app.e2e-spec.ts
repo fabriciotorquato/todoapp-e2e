@@ -30,4 +30,22 @@ describe("Kanban app", () => {
     expect(element(by.id("todo-description")).getText()).toEqual("");
     expect(element(by.id("todo-due-date")).getText()).toEqual("");
   });
+
+  it("SHOULD delete all form fields WHEN the data is correctly sent", function() {
+    element(by.id("todo-title")).sendKeys("Protractor Tilte");
+    element(by.id("todo-description")).sendKeys("Protractor Description");
+    element(by.id("todo-due-date")).sendKeys("Protractor Date");
+
+    element(by.id("btn_submit")).click();
+
+    expect(element(by.id("todo-title")).getText()).toEqual("");
+    expect(element(by.id("todo-description")).getText()).toEqual("");
+    expect(element(by.id("todo-due-date")).getText()).toEqual("");
+  });
+
+  it("SHOULD title with text label WHEN writing a text in form title fields", function() {
+    element(by.id("todo-title")).sendKeys("Protractor Tilte");
+    expect(element(by.id("todo-title")).getText()).toEqual("Error Protractor Tilte");
+  });
+
 });
