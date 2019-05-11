@@ -19,16 +19,15 @@ describe("Kanban app", () => {
     expect(alert.getText()).toEqual("Invalid form");
   });
 
-  it('SHOULD delete all form fields WHEN the data is correctly sent',function(){
-    element(by.id('todo-title')).sendKeys("Protractor Tilte");
-    element(by.id('todo-description')).sendKeys("Protractor Description");
-    element(by.id('todo-due-date')).sendKeys("Protractor Date");
+  it("SHOULD delete all form fields WHEN the data is correctly sent", function() {
+    element(by.id("todo-title")).sendKeys("Protractor Tilte");
+    element(by.id("todo-description")).sendKeys("Protractor Description");
+    element(by.id("todo-due-date")).sendKeys("Protractor Date");
 
     element(by.id("btn_submit")).click();
 
-    expect(element(by.id('todo-title')).getText()).toEqual("");
-    expect(element(by.id('todo-description')).getText()).toEqual("");
-    expect(element(by.id('todo-due-date')).getText()).toEqual("");
+    expect(element(by.id("todo-title")).getText()).toEqual("");
+    expect(element(by.id("todo-description")).getText()).toEqual("");
+    expect(element(by.id("todo-due-date")).getText()).toEqual("");
   });
-
 });
